@@ -33,6 +33,6 @@ The JXA files can be easily run with Mythic in-memory:
 ## Swift Projects
 Compile, drop to target, remove quarantine attribute if needed, and execute. Example methods to remove the quarantine attrib are below: 
 
-> curl -f file:///<path> -o <new> 
+> curl -f file:///[path] -o [new_file_with_no_quarantine_attrib] 
 
-> cat <file> > <new_file> 
+> cat [file] > [new_file_with_no_quarantine_attrib] 
