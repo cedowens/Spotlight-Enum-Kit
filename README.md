@@ -1,5 +1,5 @@
 # OPSEC-Safe-macOS-Situational-Awareness-Kit
-Repo of swift and jxa projects to quietly enumerate the following without generating any TCC popups to the user:
+Repo of swift and jxa projects to enumerate the following without generating any TCC popups to the user:
 
 - TCC FDA & folder permissions
 
