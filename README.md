@@ -1,15 +1,21 @@
 # OPSEC-Safe-macOS-Situational-Awareness-Kit
-Repo of swift and jxa projects to enumerate the following without generating any TCC popups to the user:
+Repo of Swift and JXA projects to enumerate the following without generating any TCC popups to the user:
 
-- TCC FDA & folder permissions
+- TCC FDA & folder permissions (TCC-Checker.js and tcc_folder_checker-swift-main)
 
-- Files in the user's homedir and subdirs that have been created in the last two weeks
+- Files in the user's homedir and subdirs that have been created in the last two weeks (Spotlight-RecentFiles.js and Spotlight-RecentFilesCheck-Swift)
 
-- Files in the user's homedir and subdirs that have been modified in the last two weeks
+- Files in the user's homedir and subdirs that have been modified in the last two weeks (Spotlight-RecentFiles.js and Spotlight-RecentFilesCheck-Swift)
 
-- Files in the user's homedir and subdirs with interesting keywords ("password", "secret", and "token") in the filename or file contents
+- Files in the user's homedir and subdirs with interesting keywords ("password", "secret", and "token") in the filename or file contents (Spotlight-KeyWordSearch.js and Spotlight-KeywordSearch-Swift)
 
 All searches above are run against the Spotlight database instead of against the file system.
+
+**I also wrote two versions of SwiftBelt for additional enumeration (on disk keys/creds, running apps, ffox cookies, etc.):**
+
+https://github.com/cedowens/SwiftBelt
+
+https://github.com/cedowens/SwiftBelt-JXA
 
 
 ## Detection
