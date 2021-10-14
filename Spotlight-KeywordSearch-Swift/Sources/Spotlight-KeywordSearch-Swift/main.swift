@@ -9,6 +9,9 @@ var p1 = 0
 var p2 = 0
 var p3 = 0
 let fileMan = FileManager.default
+var c1 = 0
+var c2 = 0
+var c3 = 0
 
 print("\n-------------------------Password Keyword Search--------------------------------")
 let queryString = "kMDItemTextContent == passw || kMDItemDisplayName = *passw*"
@@ -20,7 +23,11 @@ if let query = MDQueryCreate(kCFAllocatorDefault, queryString as CFString, nil, 
             let item = Unmanaged<MDItem>.fromOpaque(rawPtr).takeUnretainedValue()
             if let path = MDItemCopyAttribute(item, kMDItemPath) as? String {
                 if (path.contains("/Users/\(username)")){
-                    print(path)
+                    c1 = c1 + 1
+                    if c1 <= 25 {
+                        print(path)
+                    }
+
                 }
                 
                 
@@ -42,7 +49,11 @@ if let query2 = MDQueryCreate(kCFAllocatorDefault, queryString2 as CFString, nil
             let item2 = Unmanaged<MDItem>.fromOpaque(rawPtr2).takeUnretainedValue()
             if let path2 = MDItemCopyAttribute(item2, kMDItemPath) as? String {
                 if (path2.contains("/Users/\(username)")) && !(path2.contains("/Library/")){
-                    print(path2)
+                    c2 = c2 + 1
+                    if c2 <= 25 {
+                        print(path2)
+                    }
+   
                 }
                 
                 
@@ -64,7 +75,11 @@ if let query3 = MDQueryCreate(kCFAllocatorDefault, queryString3 as CFString, nil
             let item3 = Unmanaged<MDItem>.fromOpaque(rawPtr3).takeUnretainedValue()
             if let path3 = MDItemCopyAttribute(item3, kMDItemPath) as? String {
                 if (path3.contains("/Users/\(username)")) && !(path3.contains("/Library/")){
-                    print(path3)
+                    c3 = c3 + 1
+                    if c3 <= 25 {
+                        print(path3)
+                    }
+
                 }
                 
                 
