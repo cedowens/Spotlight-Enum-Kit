@@ -24,7 +24,7 @@ else {
 }
 
 print("##########################TCC Folder Check###############################")
-let queryString = "kMDItemKind = Folder"
+let queryString = "kMDItemKind = Folder -onlyin /Users/\(username)"
 if let query = MDQueryCreate(kCFAllocatorDefault, queryString as CFString, nil, nil) {
     MDQueryExecute(query, CFOptionFlags(kMDQuerySynchronous.rawValue))
 
@@ -67,4 +67,5 @@ if let query = MDQueryCreate(kCFAllocatorDefault, queryString as CFString, nil, 
         print("---------------------------------------------------------------")
     }
 }
+
 
