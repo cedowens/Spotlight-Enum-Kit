@@ -1,7 +1,7 @@
 # Spotlight Enumeration Kit
 Repo of Swift and JXA projects to leverage macOS Spotlight db data for the following:
 
-- TCC folder permissions (TCC-Checker.js and tcc_folder_checker-swift-main)
+- TCC folder permissions (TCC-Checker.js and TCC-Checker-Swift)
 
 - Files in the user's homedir and subdirs that have been created in the last two weeks (Spotlight-RecentFiles.js and Spotlight-RecentFilesCheck-Swift)
 
@@ -26,8 +26,4 @@ The JXA files can be easily run with Mythic in-memory:
 > jsimport_call Check()
 
 ## Swift Projects
-Compile, drop to target, remove quarantine attribute if needed, and execute. Example methods to remove the quarantine attrib are below: 
-
-> curl -f file:///[path] -o [new_file_with_no_quarantine_attrib] 
-
-> cat [file] > [new_file_with_no_quarantine_attrib] 
+Build (either through Xcode or via "swift build"), drop to target, remove quarantine attribute if needed, and execute. 
