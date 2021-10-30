@@ -11,7 +11,7 @@ Repo of Swift and JXA projects to leverage macOS Spotlight db data for the follo
 
 All searches above are run against the Spotlight database instead of against the file system, which allows the checks to run without generating a TCC pop up to the user regardless of what TCC permissions Terminal does/does not have.
 
-**Reminder: During red team ops, if you are running a payload from the ~/Downloads directory (which is TCC protected) then any file you attempt to run from there (including these tools that check for TCC access) could generate a TCC popup if Terminal doesn't have TCC permissions for ~/Downloads already. So, it is recommended to operate from a non TCC protected directory (such as ~).**
+I recommend that you cd to a non-TCC protected directory and then run the JXA scripts/Swift binaries in this repo (just in case you run into the scenario where your payload was detonated from the ~/Downloads folder but Terminal hasn't been given any TCC accesses to ~/Downloads).
 
 
 ## Detection
