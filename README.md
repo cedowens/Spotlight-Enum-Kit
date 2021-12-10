@@ -13,6 +13,8 @@ All searches above are run against the Spotlight database instead of against the
 
 I recommend that you cd to a non-TCC protected directory and then run the JXA scripts/Swift binaries in this repo (just in case you run into the scenario where your payload was detonated from the ~/Downloads folder but Terminal hasn't been given any TCC accesses to ~/Downloads).
 
+## Caveat
+This script does not work when called from an installer package payload, as installer packages do not run under the context of Terminal. Likewise, this technique would not work for any other payload type that does not run under Terminal.
 
 ## Detection
 - All of the Swift projects use the MDQuery API to perform these searches (no command line binaries used). These are the best for opsec. However, blue teams could leverage tools that hook into the Endpoint Security Framework and search for volumes of reads from the Spotlight database (/.Spotlight-V100/Store-V1/Stores...)
