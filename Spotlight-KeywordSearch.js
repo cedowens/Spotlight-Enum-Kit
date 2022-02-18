@@ -84,4 +84,4 @@ if ($.MDQueryExecute(query3, 1)){
 return results
 }
 
-Check()
+//Check()
