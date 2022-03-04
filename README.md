@@ -16,9 +16,7 @@ Repo of Swift and JXA projects to leverage macOS Spotlight db data for the follo
 All searches above are run against the Spotlight database in a way that allows the checks to run without generating a TCC pop up to the user. 
 
 I recommend that you cd to a non-TCC protected directory and then run the JXA scripts/Swift binaries in this repo (just in case you run into the scenario where your payload was detonated from the ~/Downloads folder but Terminal hasn't been given any TCC accesses to ~/Downloads).
-
-## Caveat
-The TCC Checker script is intended to be run from a Terminal context. If using Mythic, you can use my SwiftBelt.js tool (https://github.com/cedowens/SwiftBelt-JXA) to enumerate what context you are in.
+.
 
 ## Detection
 - All of the included Swift and JXA projects use the MDQuery API to perform these searches (no command line binaries used). These are the best for opsec. However, blue teams could leverage tools that hook into the Endpoint Security Framework and search for volumes of reads from the Spotlight database (/.Spotlight-V100/Store-V1/Stores...)
