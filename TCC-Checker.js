@@ -1,4 +1,3 @@
-
 function Check() {
 ObjC.import('CoreServices')
 ObjC.bindFunction('CFMakeCollectable', ['id', ['void *']])
@@ -18,38 +17,38 @@ if ($.MDQueryExecute(query, 1)){
     var mdAttrs1 = $.MDItemCopyAttribute($.CFMakeCollectable(mdItem), $.kMDItemPath)
     var mdAttrs = ObjC.deepUnwrap(mdAttrs1);
 
-     if (mdAttrs == "/Users/" + username + "/Desktop"){
+     if (mdAttrs.endsWith("/Users/" + username + "/Desktop")){
        p1 = 1;
-       results += "[+] Terminal already has folder access to /Users/" + username + "/Desktop\n";
+       results += "[+] This app context already has folder access to /Users/" + username + "/Desktop\n";
 
      }
 
-     if (mdAttrs == "/Users/" + username + "/Documents"){
+     if (mdAttrs.endsWith("/Users/" + username + "/Documents")){
        p2 = 1;
-       results += "[+] Terminal already has folder access to /Users/" + username + "/Documents\n";
+       results += "[+] This app context already has folder access to /Users/" + username + "/Documents\n";
 
      }
 
-     if (mdAttrs == "/Users/" + username + "/Downloads"){
+     if (mdAttrs.endsWith("/Users/" + username + "/Downloads")){
        p3 = 1;
-       results += "[+] Terminal already has folder access to /Users/" + username + "/Downloads\n";
+       results += "[+] This app context already has folder access to /Users/" + username + "/Downloads\n";
 
      }
 
    }
 
    if (p1 == 0){
-     results += "[-] Terminal has NOT yet been given access to /Users/" + username + "/Desktop. Tread carefully!\n";
+     results += "[-] This app context has NOT yet been given access to /Users/" + username + "/Desktop. Tread carefully!\n";
 
    }
 
    if (p2 == 0){
-     results += "[-] Terminal has NOT yet been given access to /Users/" + username + "/Documents. Tread carefully!\n";
+     results += "[-] This app context has NOT yet been given access to /Users/" + username + "/Documents. Tread carefully!\n";
 
    }
 
    if (p3 == 0){
-     results += "[-] Terminal has NOT yet been given access to /Users/" + username + "/Downloads. Tread carefully!\n";
+     results += "[-] This app context has NOT yet been given access to /Users/" + username + "/Downloads. Tread carefully!\n";
 
    }
 
