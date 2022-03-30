@@ -3,7 +3,7 @@
 
 Repo of Swift and JXA projects to leverage macOS Spotlight db data for the following:
 
-- Check for FDA Access from your current App Context Using mdquery API calls **(TCC-Checker-mdquery.js)**
+- Check for FDA Access from your current App Context Using mdquery API calls **(TCC-Checker-mdquery.js and TCC-Checker-Swift-mdquery)**
 
 - View TCC folder permissions **(TCC-Checker.js and TCC-Checker-Swift)**
 
