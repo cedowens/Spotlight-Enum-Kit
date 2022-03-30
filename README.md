@@ -3,6 +3,8 @@
 
 Repo of Swift and JXA projects to leverage macOS Spotlight db data for the following:
 
+- Check for FDA Access from your current App Context Using mdquery API calls **(TCC-Checker-mdquery.js)**
+
 - View TCC folder permissions **(TCC-Checker.js and TCC-Checker-Swift)**
 
 - List files in the user's homedir and subdirs that have been created in the last two weeks. Will only return results from ~/Desktop, ~/Documents, or ~/Downloads if Terminal has permissions to those respective dirs. **(Spotlight-RecentFiles.js and Spotlight-RecentFilesCheck-Swift)**
