@@ -1,5 +1,6 @@
 import Foundation
 import Cocoa
+import SQLite3
 
 let username = NSUserName()
 var p1 = 0
@@ -8,31 +9,19 @@ var p3 = 0
 var results = ""
 var out = ""
 
-let qString = "kMDItemDisplayName = *TCC.db"
-if let query = MDQueryCreate(kCFAllocatorDefault, qString as CFString, nil, nil) {
-    MDQueryExecute(query, CFOptionFlags(kMDQuerySynchronous.rawValue))
-
-    for i in 0..<MDQueryGetResultCount(query) {
-        if let rawPtr = MDQueryGetResultAtIndex(query, i) {
-            let item = Unmanaged<MDItem>.fromOpaque(rawPtr).takeUnretainedValue()
-            if let path = MDItemCopyAttribute(item, kMDItemPath) as? String {
-               
-                if path.hasSuffix("/Users/\(username)/Library/Application Support/com.apple.TCC/TCC.db"){
-                    p1 = p1 + 1
-                    
-                }
-                
-            }
-        }
+//FDA Check
+let dbpath = "/Users/\(username)/Library/Application Support/com.apple.TCC/TCC.db"
+var db : OpaquePointer?
+var dbURL = URL(fileURLWithPath: dbpath)
+if sqlite3_open(dbURL.path, &db) != SQLITE_OK {
+    print("##########################FDA Check###############################")
+    print("[-] This app HAS NOT been grated full disk access - Cannot open the user's TCC db.")
+    print("##################################################################")
     }
-    
-    if p1 > 0 {
-        print("[+] Your app context HAS ALREADY been given full disk access (mdquery API calls can see the user's TCC database)")
-    }
-    else {
-        print("[-] Your app context HAS NOT been given full disk access yet (mdquery API calls cannot see the user's TCC database)")
-    }
-
+else {
+    print("##########################FDA Check###############################")
+    print("[+] This app HAS ALREADY been grated full disk access - Can open the user's TCC db")
+    print("##################################################################")
 }
 
 results += "##########################TCC Folder Check###############################\n"
