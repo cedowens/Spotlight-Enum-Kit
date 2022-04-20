@@ -2,7 +2,6 @@ import Foundation
 import Cocoa
 
 let username = NSUserName()
-let fileMan = FileManager.default
 var p1 = 0
 var p2 = 0
 var p3 = 0
